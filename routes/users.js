@@ -4,7 +4,7 @@ var router = express.Router();
 
 //mongodb
 var mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
+//mongoose.Promise = global.Promise;
         
 var conn = mongoose.connect('mongodb://127.0.0.1:27017/blog');
 var User = new mongoose.Schema({
@@ -13,10 +13,10 @@ var User = new mongoose.Schema({
     age: String
 });
 
-var myModel = conn.model('user', User);
+var myModel = mongoose.model('users', User);
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  myModel.findOne({name:"zhangangs"}, function (err, user) {
+  myModel.findOne({name:"yuanxudong"}, function (err, user) {
     res.json({title: 'Express', user: user });
   });
 });

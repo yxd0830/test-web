@@ -21,7 +21,7 @@ export default {
   	getinfo(){
         this.$axios.get('/users/cool').then((res) => {
         	console.log(res.data)
-          this.msg2 = res.data.title
+          this.msg2 = res.data.user.emali
         })
       }
   }
